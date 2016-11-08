@@ -1,1 +1,13 @@
+log/*
+temp/*
+
 app/config/config.local.neon
+
+# Idea
+*.iml
+.idea/*
+
+# vagrant
+.vagrant/machines/
+.vagrant/vagrant_config/zeromq-4.0.4
+.vagrant/vagrant_config/php-zmq
