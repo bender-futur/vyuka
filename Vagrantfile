@@ -12,8 +12,8 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ncaro/php7-debian8-apache-nginx-mysql"
-  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.box = "gilbertoalbino/ubuntu-php7"
+  config.vm.provision :shell, path: "bootstrap.sh", privileged: true
   config.vm.boot_timeout = 3000
   config.ssh.username = "vagrant"
   config.ssh.password = "vagrant"

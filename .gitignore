@@ -8,6 +8,7 @@ app/config/config.local.neon
 .idea/*
 
 # vagrant
-.vagrant/machines/
-.vagrant/vagrant_config/zeromq-4.0.4
-.vagrant/vagrant_config/php-zmq
+.vagrant/machines
+
+# phpmyadmin
+www/phpmyadmin
