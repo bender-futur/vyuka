@@ -3,6 +3,8 @@
 echo '------------------------------------'
 echo '[1/3] Deleting temporary files'
 echo '------------------------------------'
+	mkdir -p /vagrant/temp
+	mkdir -p /vagrant/log
 	rm -rf /vagrant/temp/*
 	rm -rf /vagrant/log/*
 echo '------------------------------------'
