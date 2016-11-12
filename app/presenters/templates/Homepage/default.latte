@@ -1,10 +1,18 @@
 {block content}
 
-<table>
-	<th>Id</th>
-	<th>Text</th>
-	<tr n:foreach="$words as $word">
-		<td>{$word->id}</td>
-		<td>{$word->text}</td>
-	</tr>
-</table>
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Text</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr n:foreach="$words as $word">
+				<td>{$word->id}</td>
+				<td>{$word->text}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
