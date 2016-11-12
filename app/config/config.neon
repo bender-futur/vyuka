@@ -1,21 +1,29 @@
 parameters:
 
-
 application:
 	errorPresenter: Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
 
-
 session:
 	expiration: 14 days
 
-
 services:
 	router: App\RouterFactory::createRouter
+	- App\Queries\WordQuery
+	cacheStorage:
+		class: Nette\Caching\Storages\DevNullStorage
 
 extensions:
     console: Kdyby\Console\DI\ConsoleExtension
     events: Kdyby\Events\DI\EventsExtension
     annotations: Kdyby\Annotations\DI\AnnotationsExtension
     doctrine: Kdyby\Doctrine\DI\OrmExtension
+
+doctrine:
+	host: localhost
+	port: 3306
+	dbname: teaching
+	user: debian-sys-maint
+	password: Aam1i2MGYHTwx3x6
+	driver: pdo_mysql
