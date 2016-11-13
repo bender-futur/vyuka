@@ -4,7 +4,7 @@ namespace App\Presenters;
 
 use Nette\Application\UI\Presenter;
 
-class HomepagePresenter extends Presenter
+class ListedWordsPresenter extends Presenter
 {
 
 	/** @var \App\Queries\WordQuery @inject */
@@ -13,6 +13,7 @@ class HomepagePresenter extends Presenter
 	public function renderDefault()
 	{
 		$this->template->words = $this->wordQuery->findBy([]);
+		$this->template->sentences = $this->sentenceQuery->findBy([]);
 	}
 
 }

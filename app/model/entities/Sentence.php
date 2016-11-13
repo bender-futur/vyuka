@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Entities\Word;
+namespace App\Entities;
 
 use Doctrine\ORM\Mapping as ORM,
 	Kdyby\Doctrine\Entities\BaseEntity;
 
 /** @ORM\Entity */
-class Word extends BaseEntity
+class Sentence extends BaseEntity
 {
 
 	/**

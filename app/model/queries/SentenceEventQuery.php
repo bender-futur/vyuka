@@ -2,14 +2,14 @@
 
 namespace App\Queries;
 
-use App\Entities\Word\Word;
+use App\Entities\SentenceEvent;
 
-class WordQuery extends BaseQuery
+class SentenceEventQuery extends BaseQuery
 {
 
 	public function __construct(\Kdyby\Doctrine\EntityManager $em)
 	{
-		$this->entityName = Word::getClassName();
+		$this->entityName = SentenceEvent::getClassName();
 		parent::__construct($em);
 	}
 

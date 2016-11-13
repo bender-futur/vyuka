@@ -11,6 +11,11 @@ session:
 services:
 	router: App\RouterFactory::createRouter
 	- App\Queries\WordQuery
+	- App\Queries\CategoryQuery
+	- App\Queries\EventQuery
+	- App\Queries\SentenceQuery
+	- App\Queries\SentenceEventQuery
+	- App\Queries\WordEventQuery
 	cacheStorage:
 		class: Nette\Caching\Storages\DevNullStorage
 

@@ -1,0 +1,1 @@
+INSERT INTO `words` (`id`, `text`) VALUES (1, 'Stavitelství');
