@@ -13,4 +13,18 @@ class SentenceEventQuery extends BaseQuery
 		parent::__construct($em);
 	}
 
+
+	public function getSentences($eventId)
+	{
+		$qb = $this->em->createQueryBuilder();
+		$qb->select('se')
+			->from('App\Entities\SentenceEvent', 'se')
+			->join('se.event', 'ev')
+			->where('ev.id = :eventId');
+
+		return $qb->setParameter('eventId', $eventId)
+			->getQuery()
+			->getArrayResult();
+	}
+
 }

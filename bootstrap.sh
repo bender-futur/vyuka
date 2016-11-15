@@ -22,6 +22,7 @@ echo '------------------------------------'
 	cp -r /usr/share/phpmyadmin/* /vagrant/www/phpmyadmin/ &> /dev/null
 	echo "create database teaching" | mysql -u debian-sys-maint -pAam1i2MGYHTwx3x6 > /dev/null
 	mysql -u debian-sys-maint -pAam1i2MGYHTwx3x6 teaching < /vagrant/db/schema.sql > /dev/null
+	mysql -u debian-sys-maint -pAam1i2MGYHTwx3x6 teaching < /vagrant/db/data.sql > /dev/null
 echo '------------------------------------'
 echo '[4/4] Configuring apache'
 echo '------------------------------------'

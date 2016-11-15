@@ -16,6 +16,12 @@ class WordEvent extends BaseEntity
 	 **/
 	protected $id;
 
+	/** @ORM\Column(type="integer") */
+	protected $eventStart;
+
+	/** @ORM\Column(type="integer") */
+	protected $eventEnd;
+
 	/**
 	 * @ORM\ManyToOne(targetEntity="Word")
 	 * @ORM\JoinColumn(name="word_id", referencedColumnName="id")
@@ -29,6 +35,8 @@ class WordEvent extends BaseEntity
 	protected $event;
 
 	public function setText($text){$this->text = $text;}
+	public function setEventStart($eventStart){$this->eventStart = $eventStart;}
+	public function setEventEnd($eventEnd){$this->eventEnd = $eventEnd;}
 	public function setWord($word){$this->word = $word;}
 	public function setEvent($event){$this->event = $event;}
 

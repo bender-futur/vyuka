@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `word` (
 CREATE TABLE IF NOT EXISTS `event` (
    `id` int(11) NOT NULL AUTO_INCREMENT,
    `name` varchar(255) NOT NULL,
-   'category_id' int(11) NOT NULL,
+   `category_id` int(11) NOT NULL,
    PRIMARY KEY (`id`),
    FOREIGN KEY (`category_id`)
       REFERENCES `category`(`id`)
@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS `word_event` (
    `id` int(11) NOT NULL AUTO_INCREMENT,
    `word_id` int(11) NOT NULL,
    `event_id` int(11) NOT NULL,
+   `event_start` int(11),
+   `event_end` int(11),
    PRIMARY KEY (`id`),
    FOREIGN KEY (`word_id`)
       REFERENCES `word`(`id`)
@@ -48,6 +50,8 @@ CREATE TABLE IF NOT EXISTS `sentence_event` (
    `id` int(11) NOT NULL AUTO_INCREMENT,
    `sentence_id` int(11) NOT NULL,
    `event_id` int(11) NOT NULL,
+   `event_start` int(11),
+   `event_end` int(11),
    PRIMARY KEY (`id`),
    FOREIGN KEY (`sentence_id`)
       REFERENCES `sentence`(`id`)

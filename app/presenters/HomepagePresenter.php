@@ -2,17 +2,12 @@
 
 namespace App\Presenters;
 
-use Nette\Application\UI\Presenter;
-
-class HomepagePresenter extends Presenter
+class HomepagePresenter extends BasePresenter
 {
-
-	/** @var \App\Queries\WordQuery @inject */
-	public $wordQuery;
 
 	public function renderDefault()
 	{
-		$this->template->words = $this->wordQuery->findBy([]);
+
 	}
 
 }

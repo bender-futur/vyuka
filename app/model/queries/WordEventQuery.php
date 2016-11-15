@@ -13,4 +13,18 @@ class WordEventQuery extends BaseQuery
 		parent::__construct($em);
 	}
 
+
+	public function getWords($eventId)
+	{
+		$qb = $this->em->createQueryBuilder();
+		$qb->select('we')
+			->from('App\Entities\WordEvent', 'we')
+			->join('we.event', 'ev')
+			->where('ev.id = :eventId');
+
+		return $qb->setParameter('eventId', $eventId)
+			->getQuery()
+			->getArrayResult();
+	}
+
 }
