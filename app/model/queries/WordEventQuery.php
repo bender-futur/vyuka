@@ -14,17 +14,23 @@ class WordEventQuery extends BaseQuery
 	}
 
 
-	public function getWords($eventId)
+	public function getWords($eventId, $sentences = FALSE)
 	{
 		$qb = $this->em->createQueryBuilder();
 		$qb->select('we')
 			->from('App\Entities\WordEvent', 'we')
 			->join('we.event', 'ev')
-			->where('ev.id = :eventId');
+			->join('we.word', 'wo')
+			->andWhere('ev.id = :eventId')
+			->andWhere('wo.isSentence = :sentences');
 
-		return $qb->setParameter('eventId', $eventId)
-			->getQuery()
-			->getArrayResult();
+		$qb->setParameters([
+			'eventId' => $eventId,
+			'sentences' => $sentences,
+		]);
+
+		return $this->getArray($qb->getQuery()
+			->getResult());
 	}
 
 }

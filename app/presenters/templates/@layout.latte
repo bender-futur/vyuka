@@ -25,11 +25,11 @@
         	<span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Materiály</a>
+				<a class="navbar-brand" n:href="Homepage:">Materiály</a>
 			</div>
     	<div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">
     		Přihlášen: Anička
-    		<a href="#" class="btn btn-danger square-btn-adjust">Odhlásit</a>
+    		<a href="#" class="btn btn-default">Odhlásit</a>
 			</div>
 		</nav>
 
@@ -38,28 +38,17 @@
 			<div class="sidebar-collapse">
 				<ul class="nav" id="main-menu">
 					<li class="text-center"><img src="{$basePath}/assets/img/pencil-ruler.jpg" class="user-image img-responsive"/></li>
-
 					<li>
-						<a href="#" class="active-menu"><i class="fa fa-font fa-3x"></i> Český jazyk</a>
-						<ul class="nav nav-second-level">
-							<li><a n:href="Czech:listedWords">Vyjmenovaná slova</a></li>
-							<li><a href="#">Shoda přísudku s podmětem</a></li>
-							<li><a href="#">ě, je</a></li>
-						</ul>
+						<a n:href="Czech:" n:class="$presenter->isAction('Czech:') ? active-menu"><i class="fa fa-font fa-3x"></i> Český jazyk</a>
+						{*<ul class="nav nav-second-level">*}
+							{*<li><a n:href="Czech:listedWords">Vyjmenovaná slova</a></li>*}
+							{*<li><a href="#">Shoda přísudku s podmětem</a></li>*}
+							{*<li><a href="#">ě, je</a></li>*}
+						{*</ul>*}
 					</li>
-
-					<li>
-						<a href="#"><i class="fa fa-superscript fa-3x"></i> Matematika</a>
-						<ul class="nav nav-second-level">
-							<li><a href="#">Násobení a dělení</a></li>
-							<li><a href="#">Zlomky</a></li>
-							<li><a href="#">Počítání do milionu</a></li>
-						</ul>
-					</li>
-
-					<li><a href="index.html"><i class="fa fa-sun-o fa-3x"></i> Přírodověda</a></li>
-
-					<li><a href="index.html"><i class="fa fa-music fa-3x"></i> Hudebka</a></li>
+					<li><a n:href="Math:"><i class="fa fa-superscript fa-3x"></i> Matematika</a></li>
+					<li><a n:href="Homepage:"><i class="fa fa-sun-o fa-3x"></i> Přírodověda</a></li>
+					<li><a n:href="Homepage:"><i class="fa fa-music fa-3x"></i> Hudebka</a></li>
 				</ul>
 			</div>
 		</nav>

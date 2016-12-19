@@ -42,7 +42,7 @@ body {
     border:1px solid #f3f3f3;
 }
 h2 {
-    color: #f00;
+    color: #4a00b1;
 }
 h4 {
     padding-top:10px;
@@ -207,7 +207,7 @@ max-width:170px;
 
 .navbar-cls-top .navbar-brand {
 	color: #fff;
-background: #C90000;
+background: #B94A00;
 width: 260px;
 text-align: center;
 height: 60px;
@@ -215,7 +215,7 @@ font-size: 30px;
 font-weight: 700;
 }
 .active-menu {
-    background-color:#C90000!important;
+    background-color:#B94A00!important;
 }
 
 .arrow {
@@ -276,7 +276,7 @@ font-weight: 700;
 	left:20px;
 	width:15px;
 	height:1px;
-	background:#ff0000;
+	background:#B94A00;
 	top:20px;
 }
 .nav-second-level > li > a:after,
@@ -287,7 +287,7 @@ font-weight: 700;
 	left:20px;
 	width:1px;
 	height:100%;
-	background:#ff0000;
+	background:#B94A00;
 	top:0px;
 	z-index:10;
 }
@@ -311,7 +311,7 @@ font-weight: 700;
 }
 .navbar-cls-top .navbar-brand:hover {
 
-background: #C90000;
+background: #914500;
 color:#fff;
 
 }
@@ -321,10 +321,10 @@ border:0px solid black;
      
 }
 .navbar-header {
-    background: #A70303;
+    background: #914500;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-background-color: #B40101;
+background-color: #914500;
 }
 .navbar-default .navbar-toggle {
 border-color: #fff;
@@ -380,4 +380,12 @@ line-height: 1.428571429;
 			border-radius: 0;
 		}
    
+}
+
+.row a.overview {
+	text-decoration: none;
+}
+
+.row a.overview:hover {
+	cursor: pointer;
 }

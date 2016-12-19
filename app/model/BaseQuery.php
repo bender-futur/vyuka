@@ -251,4 +251,15 @@ class BaseQuery extends Nette\Object
 	{
 	}
 
+
+	/**
+	 * If $items is an entity, it returns an array containing this entity, if $items is an array, it is returned
+	 * @param mixed $items
+	 * @return array
+	 */
+	protected function getArray($items)
+	{
+		return is_array($items) ? $items : [$items];
+	}
+
 }

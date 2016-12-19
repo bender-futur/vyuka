@@ -13,6 +13,25 @@ echo '------------------------------------'
 	export DEBIAN_FRONTEND=noninteractive
 	apt-get update > /dev/null
 	echo "" | apt-get -y install php5-sqlite &> /dev/null
+	cp /vagrant/.vagrant/vagrant_config/xdebug-2.4.1.tgz /home/vagrant > /dev/null
+	tar -xvzf /home/vagrant/xdebug-2.4.1.tgz &> /dev/null
+	cd /home/vagrant/xdebug-2.4.1
+	phpize &> /dev/null
+	./configure &> /dev/null
+	make &> /dev/null
+	cp modules/xdebug.so /usr/lib/php5/20131226 &> /dev/null
+	echo "zend_extension = /usr/lib/php5/20131226/xdebug.so" >> /etc/php5/apache2/php.ini
+
+	echo "xdebug.remote_enable=1" >> /etc/php5/apache2/php.ini
+  echo "xdebug.remote_host=10.0.2.2" >> /etc/php5/apache2/php.ini
+  #echo "xdebug.remote_port=8000" >> /etc/php5/apache2/php.ini
+  echo "xdebug.remote_autostart=1" >> /etc/php5/apache2/php.ini
+
+	#echo "xdebug.remote_enable = 1" >> /etc/php5/apache2/php.ini
+	#echo "xdebug.remote_host = 10.0.2.2" >> /etc/php5/apache2/php.ini
+	echo "xdebug.idekey = XSESSION_DEBUG" >> /etc/php5/apache2/php.ini
+	echo "xdebug.profiler_enable_trigger = 1" >> /etc/php5/apache2/php.ini
+
 	/etc/init.d/apache2 restart > /dev/null
 echo '------------------------------------'
 echo '[3/4] Configuring mysql'

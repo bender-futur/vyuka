@@ -19,6 +19,10 @@ class Word extends BaseEntity
 	/** @ORM\Column(type="string") */
 	protected $text;
 
+	/** @ORM\Column(type="string", name="is_sentence") */
+	protected $isSentence;
+
 	public function setText($text){$this->text = $text;}
+	public function setIsSentence($isSentence){$this->isSentence = $isSentence;}
 
 }
